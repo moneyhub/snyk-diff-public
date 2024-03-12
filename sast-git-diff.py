@@ -5,6 +5,8 @@ import os
 
 base_main_path = os.getenv('BASE_MAIN_JSON')
 commit_path = os.getenv('COMMIT_JSON')
+print(base_main_path)
+print(commit_path)
 
 if not commit_path:
     print("No vulnerabilities introduced")
