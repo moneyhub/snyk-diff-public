@@ -5,13 +5,11 @@ import os
 
 base_main_path = os.getenv('BASE_MAIN_JSON')
 commit_path = os.getenv('COMMIT_JSON')
-print(base_main_path)
-print(commit_path)
 
-if not commit_path:
+if not os.path.exists(commit_path):
     print("No vulnerabilities introduced")
     sys.exit(0)
-elif not base_main_path:
+elif not os.path.exists(base_main_path):
     introduced_vulnerabilities = []
     with open(commit_path, "r") as commit:
         commit_data = json.load(commit)
